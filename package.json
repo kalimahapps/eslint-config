@@ -1,0 +1,50 @@
+{
+  "name": "@kalimahapps/eslint-config",
+  "version": "1.0.0",
+  "description": "Comprehensive and configurable ESLint config for Vue 3 projects with TypeScript support",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kalimah-apps/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kalimah-apps/eslint-config/issues"
+  },
+  "author": "khr2003",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": "^8.12.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
+    "eslint": "^8.29.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-jsdoc": "^39.6.4",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-unicorn": "^45.0.1",
+    "eslint-plugin-vue": "^9.8.0",
+    "typescript": "^4.9.4"
+  },
+  "engines": {
+    "node": ">=14.16"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "eslint",
+    "eslint-config",
+    "code",
+    "quality",
+    "eslint-plugin",
+    "code style",
+    "javascript",
+    "typescript",
+    "eslint-plugin-vue",
+    "eslint-plugin-jsdoc",
+    "eslint-plugin-promise",
+    "eslint-plugin-unicorn",
+    "eslint-plugin-n",
+    "eslint-plugin-eslint-comments"
+  ]
+}
