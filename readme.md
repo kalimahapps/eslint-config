@@ -42,18 +42,12 @@
 ## 💽 Installation
 ### NPM
 ```bash
-npm install @kalimahapps/eslint-plugin
+npm install @kalimahapps/eslint-plugin -D
 ```
 
 ### PNPM
 ```bash
-pnpm add @kalimahapps/eslint-plugin
-```
-
-### JSDoc
-ESlint is unable to find eslint-plugin-jsdoc package. You need to install `eslint-plugin-jsdoc` to enable it.
-```bash
-pnpm add eslint-plugin-jsdoc -D
+pnpm add @kalimahapps/eslint-plugin -D
 ```
 <br>
 <br>
