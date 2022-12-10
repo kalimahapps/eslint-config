@@ -1,10 +1,16 @@
 const error = {
-	'accessor-pairs': { setWithoutGet: true, enforceForClassMembers: true },
+	'accessor-pairs': {
+		setWithoutGet: true,
+		enforceForClassMembers: true,
+	},
 	'array-callback-return': {
 		allowImplicit: false,
 		checkForEach: false,
 	},
-	'brace-style': ['1tbs', { allowSingleLine: true }],
+	'brace-style': [
+		'1tbs',
+		{ allowSingleLine: true },
+	],
 	'comma-spacing': {
 		before: false,
 		after: true,
@@ -12,7 +18,12 @@ const error = {
 	'indent': ['tab', { SwitchCase: 1 }],
 	'function-paren-newline': 'consistent',
 	'quote-props': 'consistent-as-needed',
-	'quotes': ['single', { avoidEscape: true, allowTemplateLiterals: false }],
+	'quotes': [
+		'single', {
+			avoidEscape: true,
+			allowTemplateLiterals: false,
+		},
+	],
 	'comma-dangle': {
 		arrays: 'always-multiline',
 		objects: 'always-multiline',
@@ -149,11 +160,20 @@ const warning = {
 	'max-statements-per-line': { max: 1 },
 	'newline-per-chained-call': { ignoreChainWithDepth: 2 },
 	'no-multi-spaces': 'warn',
-	'no-multiple-empty-lines': { max: 1, maxEOF: 0 },
-	'no-trailing-spaces': { skipBlankLines: true, ignoreComments: true },
-	'object-curly-newline': { multiline: true },
+	'no-multiple-empty-lines': {
+		max: 1,
+		maxEOF: 0,
+	},
+	'no-trailing-spaces': {
+		skipBlankLines: true,
+		ignoreComments: true,
+	},
+	'object-curly-newline': {
+		multiline: true,
+		consistent: true,
+	},
 	'object-curly-spacing': 'always',
-	'object-property-newline': { allowAllPropertiesOnSameLine: true },
+	'object-property-newline': { allowAllPropertiesOnSameLine: false },
 	'padded-blocks': 'never',
 	'space-in-parens': 'never',
 	'space-infix-ops': 'warn',

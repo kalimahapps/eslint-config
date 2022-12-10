@@ -1,3 +1,5 @@
+/* eslint-disable unicorn/prefer-module */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const {
 	transform,
 	transformOff,
@@ -39,6 +41,12 @@ const {
 	off: typescriptOff,
 } = require('./typescript');
 
+const {
+	error: importError,
+	warning: importWarning,
+	off: importOff,
+} = require('./import');
+
 const errorsRules = {
 	'vue': vueError,
 	'jsdoc': jsdocError,
@@ -46,6 +54,7 @@ const errorsRules = {
 	'n': nError,
 	'eslint': eslintError,
 	'@typescript-eslint': typescriptError,
+	'import': importError,
 };
 
 const warningRules = {
@@ -55,6 +64,7 @@ const warningRules = {
 	'n': nWarning,
 	'eslint': eslintWarning,
 	'@typescript-eslint': typescriptWarning,
+	'import': importWarning,
 };
 
 const offRules = {
@@ -64,6 +74,7 @@ const offRules = {
 	'n': nOff,
 	'eslint': eslintOff,
 	'@typescript-eslint': typescriptOff,
+	'import': importOff,
 };
 
 const buildError = transform(errorsRules, 'error');
