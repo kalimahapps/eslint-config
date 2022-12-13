@@ -31,7 +31,7 @@
 <br>
 
 ## ✨ Features
-- Includes unicorn, promise, jsdoc, vue and other plugins
+- Includes unicorn, promise, jsdoc, vue and other eslint plugins
 - No prettier.
 - Tabs and semicolons.
 - Configurable rules.
