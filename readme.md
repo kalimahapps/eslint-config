@@ -42,12 +42,12 @@
 ## 💽 Installation
 ### NPM
 ```bash
-npm install eslint @kalimahapps/eslint-plugin -D
+npm install eslint @kalimahapps/eslint-config -D
 ```
 
 ### PNPM
 ```bash
-pnpm add eslint @kalimahapps/eslint-plugin -D
+pnpm add eslint @kalimahapps/eslint-config -D
 ```
 <br>
 <br>
