@@ -1,13 +1,13 @@
 {
   "name": "@kalimahapps/eslint-config",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Comprehensive and configurable ESLint config for Vue 3 projects with TypeScript support",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kalimah-apps/eslint-config.git"
+    "url": "https://github.com/kalimahapps/eslint-config.git"
   },
   "bugs": {
-    "url": "https://github.com/kalimah-apps/eslint-config/issues"
+    "url": "https://github.com/kalimahapps/eslint-config/issues"
   },
   "author": "khr2003",
   "license": "MIT",
