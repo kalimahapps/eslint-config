@@ -10,7 +10,14 @@ const error = {
 
 const warning = { 'prefer-string-replace-all': 'warn' };
 
-const off = ['no-array-for-each', 'no-array-reduce', 'no-keyword-prefix', 'prefer-set-has'];
+const off = [
+	'no-array-for-each',
+	'no-array-reduce',
+	'no-keyword-prefix',
+	'prefer-set-has',
+	'no-array-callback-reference',
+	'require-post-message-target-origin',
+];
 
 module.exports = {
 	error,

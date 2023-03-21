@@ -25,7 +25,10 @@
 		"javascript",
 		"javascriptreact",
 		"typescript",
-		"typescriptreact"
+		"typescriptreact",
+		"json",
+		"jsonc",
+		"json5"
 	],
 	"eslint.packageManager": "pnpm",
 	"editor.defaultFormatter": null,

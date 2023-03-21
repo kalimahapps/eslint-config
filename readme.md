@@ -35,6 +35,7 @@
 - No prettier.
 - Tabs and semicolons.
 - Configurable rules.
+- Sort package.json and .vscode/settings.json files.
 
 <br>
 <br>
@@ -63,7 +64,9 @@ module.exports = {
 }
 ```
 
-Add this to your .vscode/settings.json file
+### VSCode integration
+
+Install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension in VSCode and add this to your `.vscode/settings.json` file
 ```json
 {
  	"prettier.enable": false,
@@ -78,12 +81,16 @@ Add this to your .vscode/settings.json file
 		"javascript",
 		"javascriptreact",
 		"typescript",
-		"typescriptreact"
+		"typescriptreact",
+		"json",
+		"jsonc",
+		"json5"
 	],
 }
 ```
 
-You need to install ESLint extension in VSCode. You can find it [here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+## Note
+- To enable eslint with .vscode/settings.json, you need to add `!.vscode` rule to your `.eslintignore` file
 
 <br>
 <br>

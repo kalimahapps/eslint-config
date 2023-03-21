@@ -7,7 +7,7 @@ const warning = {
 	'no-mutable-exports': 'warn',
 };
 
-const off = ['named'];
+const off = ['named', 'no-unresolved'];
 
 module.exports = {
 	error,

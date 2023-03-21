@@ -42,14 +42,16 @@ const error = {
 	'no-else-return': 'error',
 	'no-sequences': 'error',
 	'no-var': 'error',
-	'prefer-const': 'error',
+	'prefer-const': {
+		destructuring: 'all',
+	},
 	'func-call-spacing': 'never',
 	'no-whitespace-before-property': 'error',
 	'rest-spread-spacing': 'never',
 	'semi': 'always',
 	'semi-spacing': {
 		before: false,
-		after: false,
+		after: true,
 	},
 	'semi-style': 'last',
 };
@@ -76,6 +78,15 @@ const warning = {
 	'id-length': {
 		min: 2,
 		max: 30,
+		exceptions: [
+			// a and b are common in sort function
+			'a',
+			'b',
+
+			// x and y are common in math functions
+			'x',
+			'y',
+		],
 	},
 	'max-depth': { max: 3 },
 	'max-lines': {

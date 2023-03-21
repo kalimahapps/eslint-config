@@ -1,7 +1,8 @@
 {
   "name": "@kalimahapps/eslint-config",
-  "version": "1.0.6",
   "description": "Comprehensive and configurable ESLint config for Vue 3 projects with TypeScript support",
+  "author": "khr2003",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/kalimahapps/eslint-config.git"
@@ -9,20 +10,20 @@
   "bugs": {
     "url": "https://github.com/kalimahapps/eslint-config/issues"
   },
-  "author": "khr2003",
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.46.0",
-    "@typescript-eslint/parser": "^5.46.0",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-import-newlines": "^1.3.0",
-    "eslint-plugin-jsdoc": "^39.6.4",
-    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-import-newlines": "^1.3.1",
+    "eslint-plugin-jsdoc": "^39.9.1",
+    "eslint-plugin-jsonc": "^2.7.0",
+    "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-unicorn": "^45.0.1",
-    "eslint-plugin-vue": "^9.8.0",
-    "typescript": "^4.9.4",
+    "eslint-plugin-unicorn": "^45.0.2",
+    "eslint-plugin-vue": "^9.9.0",
+    "typescript": "^5.0.2",
     "vue-eslint-parser": "^9.1.0"
   },
   "peerDependencies": {
@@ -30,10 +31,7 @@
   },
   "devDependencies": {
     "@kalimahapps/eslint-config": "link:",
-    "eslint": "^8.29.0"
-  },
-  "engines": {
-    "node": ">=14.16"
+    "eslint": "^8.36.0"
   },
   "keywords": [
     "vue",
@@ -46,11 +44,19 @@
     "code style",
     "javascript",
     "typescript",
+    "json",
+    "jsonc",
+    "json5",
+    "jsdoc",
     "eslint-plugin-vue",
     "eslint-plugin-jsdoc",
     "eslint-plugin-promise",
     "eslint-plugin-unicorn",
     "eslint-plugin-n",
+    "eslint-plugin-jsonc",
     "eslint-plugin-eslint-comments"
-  ]
+  ],
+  "engines": {
+    "node": ">=14.16"
+  }
 }
