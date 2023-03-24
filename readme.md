@@ -18,7 +18,7 @@
 </a>
 <img src="https://img.shields.io/badge/vue-3-%2342b883">
 </a>
-<img src="https://img.shields.io/github/license/kalimah-apps/@kalimahapps/eslint-config.svg">
+<img src="https://img.shields.io/github/license/kalimahapps/eslint-config.svg">
 </p>
 
 <p align="center">
@@ -41,15 +41,16 @@
 <br>
 
 ## 💽 Installation
+### PNPM
+```bash
+pnpm add eslint @kalimahapps/eslint-config -D
+```
+
 ### NPM
 ```bash
 npm install eslint @kalimahapps/eslint-config -D
 ```
 
-### PNPM
-```bash
-pnpm add eslint @kalimahapps/eslint-config -D
-```
 <br>
 <br>
 
