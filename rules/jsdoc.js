@@ -6,6 +6,12 @@ const warning = {
 	},
 	'check-line-alignment': 'always',
 	'no-bad-blocks': 'warn',
+	'tag-lines': [
+		'any',
+		{
+			startLines: 1,
+		},
+	],
 };
 
 const off = [];
