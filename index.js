@@ -57,7 +57,7 @@ module.exports = {
 			files: ['settings.json'],
 			parser: 'jsonc-eslint-parser',
 			rules: {
-				// Sort keys in settings.jso alphabetically
+				// Sort keys in settings.json alphabetically
 				// First, sort keys that are not in brackets
 				// Then, sort keys that are in brackets
 				'jsonc/sort-keys': [
@@ -73,6 +73,40 @@ module.exports = {
 							},
 							{
 								keyPattern: '\[[^\s\]]+',
+								order: {
+									type: 'asc',
+								},
+							},
+						],
+					},
+				],
+			},
+		},
+		{
+			files: ['tsconfig.json'],
+			parser: 'jsonc-eslint-parser',
+			rules: {
+				'jsonc/sort-keys': [
+					'warn',
+					{
+						pathPattern: '^$',
+						order: [
+							"compilerOptions",
+							"include",
+							"exclude"
+						],
+					},
+					{
+						pathPattern: '^compilerOptions$',
+						order: [
+							{
+								keyPattern: '^(?!paths$)',
+								order: {
+									type: 'asc',
+								},
+							},
+							{
+								keyPattern: '^paths$',
 								order: {
 									type: 'asc',
 								},
