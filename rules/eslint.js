@@ -195,6 +195,8 @@ const warning = {
 	},
 	'template-curly-spacing': 'never',
 	'template-tag-spacing': 'always',
+	'curly': 'warn',
+	'eqeqeq': 'warn',
 };
 
 const off = [];
