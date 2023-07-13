@@ -37,6 +37,8 @@
 - Configurable rules.
 - Sort package.json and .vscode/settings.json files.
 
+While this config is tailored for vue projects, it can be used for any javascript/typescript project. You might see some duplication in the rules, but nothing major.
+
 <br>
 <br>
 
