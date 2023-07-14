@@ -17,6 +17,7 @@ const off = [
 	'prefer-set-has',
 	'no-array-callback-reference',
 	'require-post-message-target-origin',
+	'prefer-json-parse-buffer'
 ];
 
 module.exports = {
