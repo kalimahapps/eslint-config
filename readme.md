@@ -31,7 +31,7 @@
 <br>
 
 ## ✨ Features
-- Includes unicorn, promise, jsdoc, vue and other eslint plugins
+- Includes unicorn, jsdoc, vue and other eslint plugins
 - No prettier.
 - Tabs and semicolons.
 - Configurable rules.
@@ -57,14 +57,11 @@ npm install eslint @kalimahapps/eslint-config -D
 <br>
 
 ## 🔧 Usage
-Add this to your `.eslintrc.js` file
+Create `eslint.config.js` file (or `eslint.config.mjs` for esm, or `eslint.config.cjs` for commonjs) in the root of your project and add this
 
 ```js
-module.exports = {
-  extends: [
-	'@kalimahapps'
-  ]
-}
+import eslintConfig from '@kalimahapps/eslint-config';
+export default [...eslintConfig];
 ```
 
 ### VSCode integration
@@ -87,14 +84,11 @@ Install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vs
 		"typescriptreact",
 		"json",
 		"jsonc",
-		"json5"
+		"json5",
+		"vue"
 	],
 }
 ```
-
-## Note
-- To enable eslint with .vscode/settings.json, you need to add `!.vscode` rule to your `.eslintignore` file
-
 <br>
 <br>
 

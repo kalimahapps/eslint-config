@@ -1,216 +1,214 @@
-const rules = require('./rules/index');
+import rules from './rules/index.js';
+import eslint from '@eslint/js';
+import tsEslint from 'typescript-eslint';
+import pluginVue from 'eslint-plugin-vue';
+import VueParser from 'vue-eslint-parser';
+import tsParser from '@typescript-eslint/parser';
+import jsdoc from 'eslint-plugin-jsdoc';
+import eslintPluginJsonc from 'eslint-plugin-jsonc';
+import importNewLine from 'eslint-plugin-import-newlines';
+import eslintPluginUnicorn from 'eslint-plugin-unicorn';
+import nPlugin from 'eslint-plugin-n';
 
-module.exports = {
-	root: true,
-	env: {
-		es2022: true,
-		node: true,
+export default [
+	eslint.configs.recommended,
+	...tsEslint.configs.recommended,
+	...pluginVue.configs['flat/recommended'],
+	...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
+	nPlugin.configs['flat/recommended-script'],
+	{
+		rules: {
+			...rules,
+			...eslintPluginUnicorn.configs.recommended.rules,
+			'import-newlines/enforce': [
+				'warn', {
+					'items': 4,
+					'max-len': 100,
+					'semi': true,
+				},
+			],
+		},
+		plugins: {
+			jsdoc,
+
+			// import: importPlugin,
+			'import-newlines': importNewLine,
+			'unicorn': eslintPluginUnicorn,
+		},
 	},
-	extends: [
-		'eslint:recommended',
-		'plugin:unicorn/all',
-		'plugin:jsdoc/recommended',
-		'plugin:n/recommended',
-		'plugin:eslint-comments/recommended',
-		'plugin:promise/recommended',
-		'plugin:import/recommended',
-	],
-	plugins: ['unicorn', 'jsdoc', 'promise', 'import-newlines'],
-	overrides: [
-		{
-			files: ['*.vue'],
-			parser: 'vue-eslint-parser',
+	{
+		files: ['*.vue', '**/*.vue'],
+		languageOptions: {
+			parser: VueParser,
 			parserOptions: {
-				parser: '@typescript-eslint/parser',
-			},
-			extends: ['plugin:vue/vue3-recommended'],
-			rules: {
-				'unicorn/filename-case': [
-					'error',
-					{
-						case: 'pascalCase',
-					},
-				],
-				'@typescript-eslint/no-unused-vars': 'off',
-			},
-			env: {
-				'vue/setup-compiler-macros': true,
+				parser: tsParser,
+				ecmaFeatures: {
+					jsx: true,
+				},
+				extraFileExtensions: ['.vue'],
+				sourceType: 'module',
 			},
 		},
-		{
-			files: ['*.ts', '*.tsx'],
-			parser: '@typescript-eslint/parser',
-			extends: ['plugin:@typescript-eslint/recommended'],
-		},
-		{
-			// Eslint does not support ESM yet, so we need to disable
-			// the rule for this file.
-			files: ['.eslintrc.js'],
-			rules: { 'unicorn/prefer-module': 'off' },
-		},
-		{
-			files: ['*.json', '*.json5', '*.jsonc'],
-			parser: 'jsonc-eslint-parser',
-			extends: ['plugin:jsonc/recommended-with-jsonc'],
-		},
-		{
-			files: ['settings.json'],
-			parser: 'jsonc-eslint-parser',
-			rules: {
-				// Sort keys in settings.json alphabetically
-				// First, sort keys that are not in brackets
-				// Then, sort keys that are in brackets
-				'jsonc/sort-keys': [
-					'warn',
-					{
-						pathPattern: '^$',
-						order: [
-							{
-								keyPattern: '^[A-Za-z.]+$',
-								order: {
-									type: 'asc',
-								},
-							},
-							{
-								keyPattern: '\[[^\s\]]+',
-								order: {
-									type: 'asc',
-								},
-							},
-						],
-					},
-				],
-			},
-		},
-		{
-			files: ['tsconfig.json'],
-			parser: 'jsonc-eslint-parser',
-			rules: {
-				'jsonc/sort-keys': [
-					'warn',
-					{
-						pathPattern: '^$',
-						order: [
-							"compilerOptions",
-							"include",
-							"exclude"
-						],
-					},
-					{
-						pathPattern: '^compilerOptions$',
-						order: [
-							{
-								keyPattern: '^(?!paths$)',
-								order: {
-									type: 'asc',
-								},
-							},
-							{
-								keyPattern: '^paths$',
-								order: {
-									type: 'asc',
-								},
-							},
-						],
-					},
-				],
-			},
-		},
-		{
-			files: ['package.json'],
-			parser: 'jsonc-eslint-parser',
-			rules: {
-				// Sort keys in package.json alphabetically
-				// Also, sort some nested objects alphabetically
-				'jsonc/sort-keys': [
-					'warn',
-					{
-						pathPattern: '^$',
-						order: [
-							'publisher',
-							'name',
-							'displayName',
-							'description',
-							'author',
-							'version',
-							'homepage',
-							'repository',
-							'bugs',
-							'type',
-							'private',
-							'packageManager',
-							'license',
-							'activationEvents',
-							'contributes',
-							'scripts',
-							'dependencies',
-							'peerDependencies',
-							'peerDependenciesMeta',
-							'optionalDependencies',
-							'devDependencies',
-							'funding',
-							'keywords',
-							'categories',
-							'sideEffects',
-							'exports',
-							'main',
-							'module',
-							'unpkg',
-							'jsdelivr',
-							'types',
-							'typesVersions',
-							'bin',
-							'icon',
-							'files',
-							'engines',
-							'pnpm',
-							'overrides',
-							'resolutions',
-							'husky',
-							'simple-git-hooks',
-							'lint-staged',
-							'eslintConfig',
-						],
-					},
-					{
-						pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
-						order: {
-							type: 'asc',
-						},
-					},
-					{
-						pathPattern: '^(?:contributes|activationPoints|scripts)',
-						order: {
-							type: 'asc',
-						},
-					},
-					{
-						pathPattern: '^exports.*$',
-						order: [
-							'types',
-							'require',
-							'import',
-						],
-					},
-				],
-			},
-		},
-	],
-	settings: {
-		jsdoc: {
-			tagNamePreference: { returns: 'return' },
+		rules: {
+			'unicorn/filename-case': [
+				'error',
+				{
+					case: 'pascalCase',
+				},
+			],
 		},
 	},
-	rules: {
-		...rules,
-
-		// This plugin has one rule, no need to create a separate file for it.
-		'import-newlines/enforce': [
-			'warn', {
-				'items': 4,
-				'max-len': 100,
-				'semi': true,
+	{
+		files: ['**/*.js'],
+		plugins: {
+			jsdoc,
+		},
+		rules: {
+			'jsdoc/require-description': 'warn',
+		},
+		settings: {
+			jsdoc: {
+				tagNamePreference: { returns: 'return' },
 			},
-		],
+		},
 	},
-};
+	{
+		files: ['**/settings.json'],
+		rules: {
+			// Sort keys in settings.json alphabetically
+			// First, sort keys that are not in brackets
+			// Then, sort keys that are in brackets
+			'jsonc/sort-keys': [
+				'warn',
+				{
+					pathPattern: '^$',
+					order: [
+						{
+							keyPattern: '^[A-Za-z.]+$',
+							order: {
+								type: 'asc',
+							},
+						},
+						{
+							keyPattern: '\[[^\s\]]+',
+							order: {
+								type: 'asc',
+							},
+						},
+					],
+				},
+			],
+		},
+	},
+	{
+		files: ['**/tsconfig.json'],
+		rules: {
+			'jsonc/sort-keys': [
+				'warn',
+				{
+					pathPattern: '^$',
+					order: [
+						'compilerOptions',
+						'include',
+						'exclude',
+					],
+				},
+				{
+					pathPattern: '^compilerOptions$',
+					order: [
+						{
+							keyPattern: '^(?!paths$)',
+							order: {
+								type: 'asc',
+							},
+						},
+						{
+							keyPattern: '^paths$',
+							order: {
+								type: 'asc',
+							},
+						},
+					],
+				},
+			],
+		},
+	},
+	{
+		files: ['**/package.json'],
+		rules: {
+			// Sort keys in package.json alphabetically
+			// Also, sort some nested objects alphabetically
+			'jsonc/sort-keys': [
+				'warn',
+				{
+					pathPattern: '^$',
+					order: [
+						'publisher',
+						'name',
+						'displayName',
+						'description',
+						'author',
+						'version',
+						'homepage',
+						'repository',
+						'bugs',
+						'type',
+						'private',
+						'packageManager',
+						'license',
+						'activationEvents',
+						'contributes',
+						'scripts',
+						'dependencies',
+						'peerDependencies',
+						'peerDependenciesMeta',
+						'optionalDependencies',
+						'devDependencies',
+						'funding',
+						'keywords',
+						'categories',
+						'sideEffects',
+						'exports',
+						'main',
+						'module',
+						'unpkg',
+						'jsdelivr',
+						'types',
+						'typesVersions',
+						'bin',
+						'icon',
+						'files',
+						'engines',
+						'pnpm',
+						'overrides',
+						'resolutions',
+						'husky',
+						'simple-git-hooks',
+						'lint-staged',
+						'eslintConfig',
+					],
+				},
+				{
+					pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
+					order: {
+						type: 'asc',
+					},
+				},
+				{
+					pathPattern: '^(?:contributes|activationPoints|scripts)',
+					order: {
+						type: 'asc',
+					},
+				},
+				{
+					pathPattern: '^exports.*$',
+					order: [
+						'types',
+						'require',
+						'import',
+					],
+				},
+			],
+		},
+	},
+];

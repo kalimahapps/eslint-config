@@ -1,6 +1,6 @@
 const error = {};
 
-const warning = {
+const warn = {
 	'check-tag-names': {
 		definedTags: ['values', 'model'],
 	},
@@ -16,8 +16,8 @@ const warning = {
 
 const off = [];
 
-module.exports = {
+export default {
 	error,
-	warning,
+	warn,
 	off,
 };

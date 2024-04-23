@@ -1,6 +1,6 @@
 const error = {};
 
-const warning = {};
+const warn = {};
 
 const off = [
 	'no-missing-import',
@@ -8,8 +8,8 @@ const off = [
 	'no-unpublished-require',
 ];
 
-module.exports = {
+export default {
 	error,
-	warning,
+	warn,
 	off,
 };

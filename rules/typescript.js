@@ -1,17 +1,14 @@
 const error = { 'consistent-type-imports': 'error' };
-const warning = {
+const warn = {
 	'semi': 'warn',
-	'ban-ts-comment': [
-		"warn",
-		{
-			"ts-ignore": "allow-with-description"
-		}
-	]
+	'ban-ts-comment':
+	{
+		'ts-ignore': 'allow-with-description',
+	},
 };
 const off = [];
-
-module.exports = {
+export default {
 	error,
-	warning,
+	warn,
 	off,
 };

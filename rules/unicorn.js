@@ -8,7 +8,7 @@ const error = {
 	},
 };
 
-const warning = { 'prefer-string-replace-all': 'warn' };
+const warn = { 'prefer-string-replace-all': 'warn' };
 
 const off = [
 	'no-array-for-each',
@@ -17,11 +17,11 @@ const off = [
 	'prefer-set-has',
 	'no-array-callback-reference',
 	'require-post-message-target-origin',
-	'prefer-json-parse-buffer'
+	'prefer-json-parse-buffer',
 ];
 
-module.exports = {
+export default {
 	error,
-	warning,
+	warn,
 	off,
 };

@@ -56,7 +56,7 @@ const error = {
 	'semi-style': 'last',
 };
 
-const warning = {
+const warn = {
 	'no-var': 'warn',
 	'object-shorthand': 'properties',
 	'no-unmodified-loop-condition': 'warn',
@@ -196,13 +196,12 @@ const warning = {
 	'template-curly-spacing': 'never',
 	'template-tag-spacing': 'always',
 	'curly': 'warn',
-	'eqeqeq': 'warn',
 };
 
 const off = [];
 
-module.exports = {
+export default {
 	error,
-	warning,
+	warn,
 	off,
 };

@@ -1,16 +1,24 @@
-/* eslint-disable unicorn/prefer-module */
-/* eslint-disable @typescript-eslint/no-var-requires */
-const {
-	transform,
-	transformOff,
-} = require('../transforms');
+import eslintRules from './eslint.js';
+import importRules from './import.js';
+import jsdocRules from './jsdoc.js';
+import nRules from './n.js';
+import typescriptRules from './typescript.js';
+import unicornRules from './unicorn.js';
+import vueRules from './vue.js';
 
-const {
-	error: vueError,
-	warning: vueWarning,
-	off: vueOff,
-} = require('./vue');
+import { outputRules } from '../transforms.js';
 
+export default {
+	...outputRules('eslint', eslintRules),
+	...outputRules('vue', vueRules),
+	// ...outputRules('import', importRules),
+	...outputRules('jsdoc', jsdocRules),
+	...outputRules('n', nRules),
+	...outputRules('@typescript-eslint', typescriptRules),
+	...outputRules('unicorn', unicornRules),
+};
+
+/*
 const {
 	error: jsdocError,
 	warning: jsdocWarning,
@@ -30,12 +38,6 @@ const {
 } = require('./n');
 
 const {
-	error: eslintError,
-	warning: eslintWarning,
-	off: eslintOff,
-} = require('./eslint');
-
-const {
 	error: typescriptError,
 	warning: typescriptWarning,
 	off: typescriptOff,
@@ -46,43 +48,54 @@ const {
 	warning: importWarning,
 	off: importOff,
 } = require('./import');
-
+ */
 const errorsRules = {
-	'vue': vueError,
+	// eslint: eslintError,
+
+	/* 'vue': vueError,
 	'jsdoc': jsdocError,
 	'unicorn': unicornError,
 	'n': nError,
-	'eslint': eslintError,
 	'@typescript-eslint': typescriptError,
-	'import': importError,
+	'import': importError, */
 };
 
 const warningRules = {
-	'vue': vueWarning,
+	// eslint: eslintWarning,
+
+	/* 'vue': vueWarning,
 	'jsdoc': jsdocWarning,
 	'unicorn': unicornWarning,
 	'n': nWarning,
-	'eslint': eslintWarning,
 	'@typescript-eslint': typescriptWarning,
-	'import': importWarning,
+	'import': importWarning, */
 };
 
 const offRules = {
-	'vue': vueOff,
+	// eslint: eslintOff,
+
+	/* 'vue': vueOff,
 	'jsdoc': jsdocOff,
 	'unicorn': unicornOff,
 	'n': nOff,
-	'eslint': eslintOff,
 	'@typescript-eslint': typescriptOff,
-	'import': importOff,
+	'import': importOff, */
 };
 
+/*
 const buildError = transform(errorsRules, 'error');
 const buildWarning = transform(warningRules, 'warn');
 const buildOff = transformOff(offRules);
 
-module.exports = {
+export default {
+	...buildError,
+	...buildWarning,
+	...buildOff,
+}; */
+
+/* module.exports = {
 	...buildError,
 	...buildWarning,
 	...buildOff,
 };
+ */

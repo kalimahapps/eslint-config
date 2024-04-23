@@ -44,7 +44,7 @@ const error = {
 	'prefer-prop-type-boolean-first': 'error',
 };
 
-const warning = {
+const warn = {
 	'no-empty-component-block': 'warn',
 	'no-required-prop-with-default': 'warn',
 	'no-unused-properties': 'warn',
@@ -62,8 +62,8 @@ const warning = {
 
 const off = [];
 
-module.exports = {
+export default {
 	error,
-	warning,
+	warn,
 	off,
 };

@@ -1,6 +1,6 @@
 const error = {};
 
-const warning = {
+const warn = {
 	'first': 'warn',
 	'exports-last': 'warn',
 	'order': 'warn',
@@ -8,9 +8,8 @@ const warning = {
 };
 
 const off = ['named', 'no-unresolved'];
-
-module.exports = {
+export default {
 	error,
-	warning,
+	warn,
 	off,
 };
