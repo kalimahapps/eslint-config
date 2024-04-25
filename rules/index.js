@@ -16,7 +16,6 @@ export default {
 	...outputRules('@typescript-eslint', typescriptRules),
 	...outputRules('unicorn', unicornRules),
 
-
 	// Rules are disabled for now until import plugin is
 	// updated to work with eslint 9
 	// ...outputRules('import', importRules),
