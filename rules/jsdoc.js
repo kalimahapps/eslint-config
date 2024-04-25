@@ -6,6 +6,7 @@ const warn = {
 	},
 	'check-line-alignment': 'always',
 	'no-bad-blocks': 'warn',
+	'require-description': 'warn',
 	'tag-lines': [
 		'any',
 		{

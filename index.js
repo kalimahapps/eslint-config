@@ -30,10 +30,15 @@ export default [
 		},
 		plugins: {
 			jsdoc,
-
-			// import: importPlugin,
 			'import-newlines': importNewLine,
 			'unicorn': eslintPluginUnicorn,
+
+			// import: importPlugin,
+		},
+		settings: {
+			jsdoc: {
+				tagNamePreference: { returns: 'return' },
+			},
 		},
 	},
 	{
@@ -56,20 +61,6 @@ export default [
 					case: 'pascalCase',
 				},
 			],
-		},
-	},
-	{
-		files: ['**/*.js'],
-		plugins: {
-			jsdoc,
-		},
-		rules: {
-			'jsdoc/require-description': 'warn',
-		},
-		settings: {
-			jsdoc: {
-				tagNamePreference: { returns: 'return' },
-			},
 		},
 	},
 	{
