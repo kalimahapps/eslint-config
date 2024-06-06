@@ -9,12 +9,12 @@ import { outputRules } from '../transforms.js';
 // import importRules from './import.js';
 
 export default {
-	...outputRules('eslint', eslintRules),
-	...outputRules('vue', vueRules),
-	...outputRules('jsdoc', jsdocRules),
-	...outputRules('n', nRules),
-	...outputRules('@typescript-eslint', typescriptRules),
-	...outputRules('unicorn', unicornRules),
+	eslint: outputRules('eslint', eslintRules),
+	jsdoc: outputRules('jsdoc', jsdocRules),
+	n: outputRules('n', nRules),
+	typescript: outputRules('@typescript-eslint', typescriptRules),
+	unicorn: outputRules('unicorn', unicornRules),
+	vue: outputRules('vue', vueRules),
 
 	// Rules are disabled for now until import plugin is
 	// updated to work with eslint 9

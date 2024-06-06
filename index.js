@@ -1,9 +1,10 @@
 import rules from './rules/index.js';
 import eslint from '@eslint/js';
 import tsEslint from 'typescript-eslint';
+import tsParser from '@typescript-eslint/parser';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
 import pluginVue from 'eslint-plugin-vue';
 import VueParser from 'vue-eslint-parser';
-import tsParser from '@typescript-eslint/parser';
 import jsdoc from 'eslint-plugin-jsdoc';
 import eslintPluginJsonc from 'eslint-plugin-jsonc';
 import importNewLine from 'eslint-plugin-import-newlines';
@@ -12,13 +13,15 @@ import nPlugin from 'eslint-plugin-n';
 
 export default [
 	eslint.configs.recommended,
-	...tsEslint.configs.recommended,
 	...pluginVue.configs['flat/recommended'],
 	...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
 	nPlugin.configs['flat/recommended-script'],
 	{
 		rules: {
-			...rules,
+			...rules.eslint,
+			...rules.jsdoc,
+			...rules.n,
+			...rules.unicorn,
 			...eslintPluginUnicorn.configs.recommended.rules,
 			'import-newlines/enforce': [
 				'warn', {
@@ -42,6 +45,20 @@ export default [
 		},
 	},
 	{
+		files: ['*.ts', '**/*.ts'],
+		plugins: { '@typescript-eslint': tsPlugin },
+		languageOptions: {
+			parser: tsParser,
+			parserOptions: {
+				sourceType: 'module',
+			},
+		},
+		rules: {
+			...tsEslint.configs.recommended.rules,
+			...rules.typescript,
+		},
+	},
+	{
 		files: ['*.vue', '**/*.vue'],
 		languageOptions: {
 			parser: VueParser,
@@ -55,6 +72,7 @@ export default [
 			},
 		},
 		rules: {
+			...rules.vue,
 			'unicorn/filename-case': [
 				'error',
 				{
