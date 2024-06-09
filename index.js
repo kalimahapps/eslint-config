@@ -12,13 +12,11 @@ import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import nPlugin from 'eslint-plugin-n';
 
 export default [
-	eslint.configs.recommended,
 	...pluginVue.configs['flat/recommended'],
 	...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
 	nPlugin.configs['flat/recommended-script'],
 	{
 		rules: {
-			...rules.eslint,
 			...rules.jsdoc,
 			...rules.n,
 			...rules.unicorn,
@@ -45,7 +43,30 @@ export default [
 		},
 	},
 	{
-		files: ['*.ts', '**/*.ts'],
+		files: ['**/*.?([cm])[jt]s?(x)'],
+		languageOptions: {
+			ecmaVersion: 2022,
+			globals: {
+				document: 'readonly',
+				navigator: 'readonly',
+				window: 'readonly',
+			},
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true,
+				},
+				ecmaVersion: 2022,
+				sourceType: 'module',
+			},
+			sourceType: 'module',
+		},
+		rules: {
+			...eslint.configs.recommended.rules,
+			...rules.eslint,
+		},
+	},
+	{
+		files: ['**/*.?([cm])ts', '**/*.?([cm])tsx'],
 		plugins: { '@typescript-eslint': tsPlugin },
 		languageOptions: {
 			parser: tsParser,
