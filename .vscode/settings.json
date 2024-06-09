@@ -1,6 +1,6 @@
 {
-	"editor.cursorStyle": "line",
 	"editor.cursorBlinking": "smooth",
+	"editor.cursorStyle": "line",
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
 	"terminal.integrated.profiles.windows": {
 		"PowerShell": {
