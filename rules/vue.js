@@ -53,7 +53,15 @@ const warn = {
 		ignoreIncludesComment: true,
 		ignoreStringEscape: true,
 	},
-	'padding-line-between-tags': 'warn',
+	'padding-line-between-tags': [
+		[
+			{
+				blankLine: 'consistent',
+				prev: '*',
+				next: '*',
+			},
+		],
+	],
 	'prefer-separate-static-class': 'warn',
 	'prefer-true-attribute-shorthand': 'warn',
 	'require-expose': 'warn',
