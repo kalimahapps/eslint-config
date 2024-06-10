@@ -6,14 +6,14 @@ import tsPlugin from '@typescript-eslint/eslint-plugin';
 import pluginVue from 'eslint-plugin-vue';
 import VueParser from 'vue-eslint-parser';
 import jsdoc from 'eslint-plugin-jsdoc';
-import eslintPluginJsonc from 'eslint-plugin-jsonc';
+import jsoncPlugin from 'eslint-plugin-jsonc';
+import jsonParser from 'jsonc-eslint-parser';
 import importNewLine from 'eslint-plugin-import-newlines';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import nPlugin from 'eslint-plugin-n';
 
 export default [
 	...pluginVue.configs['flat/recommended'],
-	...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
 	nPlugin.configs['flat/recommended-script'],
 	{
 		rules: {
@@ -100,6 +100,16 @@ export default [
 					case: 'pascalCase',
 				},
 			],
+		},
+	},
+	{
+		files: ['**/*.json', '**/*.jsonc', '**/*.json5'],
+		rules: rules.jsonc,
+		languageOptions: {
+			parser: jsonParser,
+		},
+		plugins: {
+			jsonc: jsoncPlugin,
 		},
 	},
 	{

@@ -1,63 +1,64 @@
 {
-  "name": "@kalimahapps/eslint-config",
-  "description": "Comprehensive and configurable ESLint config for Vue 3 projects with TypeScript support",
-  "author": "khr2003",
-  "version": "1.2.6",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kalimahapps/eslint-config.git"
-  },
-  "bugs": {
-    "url": "https://github.com/kalimahapps/eslint-config/issues"
-  },
-  "type": "module",
-  "license": "MIT",
-  "dependencies": {
-    "@eslint/js": "^9.1.1",
-    "@typescript-eslint/eslint-plugin": "^7.12.0",
-    "@typescript-eslint/parser": "^7.7.1",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-import-newlines": "^1.4.0",
-    "eslint-plugin-jsdoc": "^48.2.3",
-    "eslint-plugin-jsonc": "^2.15.1",
-    "eslint-plugin-n": "^17.3.1",
-    "eslint-plugin-unicorn": "^47.0.0",
-    "eslint-plugin-vue": "^9.25.0",
-    "typescript": "^5.4.5",
-    "typescript-eslint": "^7.7.1",
-    "vue-eslint-parser": "^9.4.2"
-  },
-  "peerDependencies": {
-    "eslint": ">= 9"
-  },
-  "devDependencies": {
-    "eslint": "^9.1.1"
-  },
-  "keywords": [
-    "vue",
-    "vue3",
-    "eslint",
-    "eslint-config",
-    "code",
-    "quality",
-    "eslint-plugin",
-    "code style",
-    "javascript",
-    "typescript",
-    "json",
-    "jsonc",
-    "json5",
-    "jsdoc",
-    "eslint-plugin-vue",
-    "eslint-plugin-jsdoc",
-    "eslint-plugin-promise",
-    "eslint-plugin-unicorn",
-    "eslint-plugin-n",
-    "eslint-plugin-jsonc",
-    "eslint-plugin-eslint-comments"
-  ],
-  "main": "index.js",
-  "engines": {
-    "node": ">=14.16"
-  }
+	"name": "@kalimahapps/eslint-config",
+	"description": "Comprehensive and configurable ESLint config for Vue 3 projects with TypeScript support",
+	"author": "khr2003",
+	"version": "1.2.7",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kalimahapps/eslint-config.git"
+	},
+	"bugs": {
+		"url": "https://github.com/kalimahapps/eslint-config/issues"
+	},
+	"type": "module",
+	"license": "MIT",
+	"dependencies": {
+		"@eslint/js": "^9.1.1",
+		"@typescript-eslint/eslint-plugin": "^7.12.0",
+		"@typescript-eslint/parser": "^7.7.1",
+		"eslint-plugin-eslint-comments": "^3.2.0",
+		"eslint-plugin-import-newlines": "^1.4.0",
+		"eslint-plugin-jsdoc": "^48.2.3",
+		"eslint-plugin-jsonc": "^2.15.1",
+		"eslint-plugin-n": "^17.3.1",
+		"eslint-plugin-unicorn": "^47.0.0",
+		"eslint-plugin-vue": "^9.25.0",
+		"jsonc-eslint-parser": "^2.4.0",
+		"typescript": "^5.4.5",
+		"typescript-eslint": "^7.7.1",
+		"vue-eslint-parser": "^9.4.2"
+	},
+	"peerDependencies": {
+		"eslint": ">= 9"
+	},
+	"devDependencies": {
+		"eslint": "^9.1.1"
+	},
+	"keywords": [
+		"vue",
+		"vue3",
+		"eslint",
+		"eslint-config",
+		"code",
+		"quality",
+		"eslint-plugin",
+		"code style",
+		"javascript",
+		"typescript",
+		"json",
+		"jsonc",
+		"json5",
+		"jsdoc",
+		"eslint-plugin-vue",
+		"eslint-plugin-jsdoc",
+		"eslint-plugin-promise",
+		"eslint-plugin-unicorn",
+		"eslint-plugin-n",
+		"eslint-plugin-jsonc",
+		"eslint-plugin-eslint-comments"
+	],
+	"main": "index.js",
+	"engines": {
+		"node": ">=14.16"
+	}
 }

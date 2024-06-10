@@ -38,6 +38,9 @@ importers:
       eslint-plugin-vue:
         specifier: ^9.25.0
         version: 9.25.0(eslint@9.1.1)
+      jsonc-eslint-parser:
+        specifier: ^2.4.0
+        version: 2.4.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
