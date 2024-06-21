@@ -92,8 +92,12 @@ export default [
 				sourceType: 'module',
 			},
 		},
+		plugins: { '@typescript-eslint': tsPlugin },
 		rules: {
 			...rules.vue,
+			...rules.typescript,
+			...eslint.configs.recommended.rules,
+			...rules.eslint,
 			'unicorn/filename-case': [
 				'error',
 				{
