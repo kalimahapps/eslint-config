@@ -11,11 +11,28 @@ import jsonParser from 'jsonc-eslint-parser';
 import importNewLine from 'eslint-plugin-import-newlines';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import nPlugin from 'eslint-plugin-n';
+import eslintPluginYml from 'eslint-plugin-yml';
+import yamlParser from 'yaml-eslint-parser';
 
 export default [
 	...pluginVue.configs['flat/recommended'],
 	nPlugin.configs['flat/recommended-script'],
 	{
+		ignores: [
+			'!.vitepress/',
+			'!**/.github/**',
+			'node_modules',
+			'**/dist/',
+			'**/build/',
+			'**/coverage/',
+			'**/public/',
+			'**/static/',
+			'**/vendor/',
+			'**/tmp/',
+			'**/temp/',
+			'**/out/',
+			'**/output/',
+		],
 		rules: {
 			...rules.jsdoc,
 			...rules.n,
@@ -63,6 +80,17 @@ export default [
 		rules: {
 			...eslint.configs.recommended.rules,
 			...rules.eslint,
+		},
+	},
+	{
+		files: ['**/*.y?(a)ml'],
+		plugins: { yml: eslintPluginYml },
+		ignores: ['**/pnpm-lock.yaml'],
+		languageOptions: {
+			parser: yamlParser,
+		},
+		rules: {
+			...rules.yml,
 		},
 	},
 	{
