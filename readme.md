@@ -85,7 +85,9 @@ Install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vs
 		"json",
 		"jsonc",
 		"json5",
-		"vue"
+		"vue",
+		"yml",
+		"yaml"
 	],
 }
 ```
