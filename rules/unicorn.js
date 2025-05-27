@@ -18,6 +18,7 @@ const off = [
 	'no-array-callback-reference',
 	'require-post-message-target-origin',
 	'prefer-json-parse-buffer',
+	'unicorn/expiring-todo-comments',
 ];
 
 export default {

@@ -2,7 +2,7 @@
 	"name": "@kalimahapps/eslint-config",
 	"description": "Comprehensive and configurable ESLint config for Vue 3 projects with TypeScript support",
 	"author": "khr2003",
-	"version": "1.2.91",
+	"version": "1.2.92",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/kalimahapps/eslint-config.git"

@@ -46,7 +46,9 @@
 		"json",
 		"jsonc",
 		"json5",
-		"vue"
+		"vue",
+		"yml",
+		"yaml"
 	],
 	"editor.defaultFormatter": null,
 	"cSpell.allowCompoundWords": true,
@@ -96,5 +98,9 @@
 	},
 	"[php]": {
 		"editor.defaultFormatter": "KalimahApps.taqwim"
-	}
+	},
+	"github.copilot.advanced": {
+		"authProvider": "github"
+	},
+	"fileNestingUpdater.autoUpdate": true
 }
