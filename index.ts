@@ -13,6 +13,7 @@ import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import nPlugin from 'eslint-plugin-n';
 import eslintPluginYml from 'eslint-plugin-yml';
 import yamlParser from 'yaml-eslint-parser';
+import stylistic from '@stylistic/eslint-plugin';
 
 export default [
 	...pluginVue.configs['flat/recommended'],
@@ -50,6 +51,7 @@ export default [
 			jsdoc,
 			'import-newlines': importNewLine,
 			'unicorn': eslintPluginUnicorn,
+			'@stylistic': stylistic,
 
 			// import: importPlugin,
 		},
@@ -80,6 +82,7 @@ export default [
 		rules: {
 			...eslint.configs.recommended.rules,
 			...rules.eslint,
+			...rules.eslintStylistic,
 		},
 	},
 	{
@@ -103,7 +106,8 @@ export default [
 			},
 		},
 		rules: {
-			...tsEslint.configs.recommended.rules,
+			// todo: enable recommended rules after fixing all issues
+			// ...tsEslint.configs.recommended.rules,
 			...rules.typescript,
 		},
 	},
@@ -126,6 +130,7 @@ export default [
 			...rules.typescript,
 			...eslint.configs.recommended.rules,
 			...rules.eslint,
+			...rules.eslintStylistic,
 			'unicorn/filename-case': [
 				'error',
 				{
