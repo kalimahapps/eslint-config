@@ -18,7 +18,7 @@ export default {
 	typescript: typescriptRules,
 	unicorn: unicornRules,
 	vue: vueRules,
-	jsonc:  jsonc,
+	jsonc,
 	yml: ymlRules,
 
 	// Rules are disabled for now until import plugin is

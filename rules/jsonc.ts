@@ -32,11 +32,13 @@ const rules: Linter.RulesRecord = {
 	'jsonc/array-bracket-newline': ['warn', { multiline: true }],
 	'jsonc/array-element-newline': ['warn', 'consistent'],
 	'jsonc/indent': ['warn', 'tab'],
-	'jsonc/key-spacing': ['warn', {
-		beforeColon: false,
-		afterColon: true,
-		mode: 'strict',
-	}],
+	'jsonc/key-spacing': [
+		'warn', {
+			beforeColon: false,
+			afterColon: true,
+			mode: 'strict',
+		},
+	],
 	'comma-style': ['warn', 'last'],
 };
 

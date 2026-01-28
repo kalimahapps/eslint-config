@@ -1,4 +1,4 @@
-import KalimahEslintConfig from './index.js';
+import KalimahEslintConfig from './index';
 export default [
 	{
 		ignores: ['test/**/*.vue'],

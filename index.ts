@@ -8,7 +8,7 @@ import VueParser from 'vue-eslint-parser';
 import jsdoc from 'eslint-plugin-jsdoc';
 import jsoncPlugin from 'eslint-plugin-jsonc';
 import jsonParser from 'jsonc-eslint-parser';
-import importNewLine from 'eslint-plugin-import-newlines';
+// import importNewLine from 'eslint-plugin-import-newlines';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import nPlugin from 'eslint-plugin-n';
 import eslintPluginYml from 'eslint-plugin-yml';
@@ -39,17 +39,17 @@ export default [
 			...rules.n,
 			...rules.unicorn,
 			...eslintPluginUnicorn.configs.recommended.rules,
-			'import-newlines/enforce': [
-				'warn', {
-					'items': 4,
-					'max-len': 100,
-					'semi': true,
-				},
-			],
+			// 'import-newlines/enforce': [
+			// 	'warn', {
+			// 		'items': 4,
+			// 		'max-len': 100,
+			// 		'semi': true,
+			// 	},
+			// ],
 		},
 		plugins: {
 			jsdoc,
-			'import-newlines': importNewLine,
+			// 'import-newlines': importNewLine,
 			'unicorn': eslintPluginUnicorn,
 			'@stylistic': stylistic,
 

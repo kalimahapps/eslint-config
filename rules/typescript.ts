@@ -5,9 +5,11 @@ const rules: Linter.RulesRecord = {
 	'@typescript-eslint/consistent-type-imports': 'error',
 
 	// Warn
-	'@typescript-eslint/ban-ts-comment': ['warn', {
-		'ts-ignore': 'allow-with-description',
-	}]
+	'@typescript-eslint/ban-ts-comment': [
+		'warn', {
+			'ts-ignore': 'allow-with-description',
+		},
+	],
 };
 
 export default rules;

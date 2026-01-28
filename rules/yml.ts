@@ -12,9 +12,11 @@ const rules: Linter.RulesRecord = {
 	'yml/vue-custom-block/no-parsing-error': 'error',
 
 	// warn
-	'yml/quotes': ['warn', {
-		avoidEscape: false,
-	}],
+	'yml/quotes': [
+		'warn', {
+			avoidEscape: false,
+		},
+	],
 	'yml/block-mapping-colon-indicator-newline': 'warn',
 };
 

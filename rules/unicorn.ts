@@ -2,13 +2,15 @@ import type { Linter } from 'eslint';
 
 const rules: Linter.RulesRecord = {
 	// Error
-	'unicorn/prevent-abbreviations': ['error', {
-		replacements: {
-			props: false,
-			prop: false,
-			attrs: false,
+	'unicorn/prevent-abbreviations': [
+		'error', {
+			replacements: {
+				props: false,
+				prop: false,
+				attrs: false,
+			},
 		},
-	}],
+	],
 
 	// Warn
 	'unicorn/prefer-string-replace-all': 'warn',
