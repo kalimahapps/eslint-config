@@ -2,58 +2,49 @@ import rules from './rules/index.js';
 import eslint from '@eslint/js';
 import tsEslint from 'typescript-eslint';
 import tsParser from '@typescript-eslint/parser';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
 import pluginVue from 'eslint-plugin-vue';
 import VueParser from 'vue-eslint-parser';
 import jsdoc from 'eslint-plugin-jsdoc';
 import jsoncPlugin from 'eslint-plugin-jsonc';
 import jsonParser from 'jsonc-eslint-parser';
-// import importNewLine from 'eslint-plugin-import-newlines';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import nPlugin from 'eslint-plugin-n';
 import eslintPluginYml from 'eslint-plugin-yml';
 import yamlParser from 'yaml-eslint-parser';
 import stylistic from '@stylistic/eslint-plugin';
+import type { Linter } from 'eslint/universal';
+import type { CompatiblePlugin } from 'node_modules/typescript-eslint/dist/compatibility-types.js';
+import { globalIgnores } from 'eslint/config';
 
-export default [
+const config: Linter.Config[] = [
+	globalIgnores([
+		'!.vitepress/',
+		'!**/.github/**',
+		'**/node_modules/',
+		'**/dist/',
+		'**/build',
+		'**/coverage',
+		'**/public',
+		'**/static',
+		'**/vendor',
+		'**/tmp',
+		'**/temp',
+		'**/out/*',
+		'**/output/*',
+	]),
 	...pluginVue.configs['flat/recommended'],
 	nPlugin.configs['flat/recommended-script'],
 	{
-		ignores: [
-			'!.vitepress/',
-			'!**/.github/**',
-			'node_modules',
-			'**/dist/',
-			'**/build/',
-			'**/coverage/',
-			'**/public/',
-			'**/static/',
-			'**/vendor/',
-			'**/tmp/',
-			'**/temp/',
-			'**/out/',
-			'**/output/',
-		],
 		rules: {
 			...rules.jsdoc,
 			...rules.n,
 			...rules.unicorn,
 			...eslintPluginUnicorn.configs.recommended.rules,
-			// 'import-newlines/enforce': [
-			// 	'warn', {
-			// 		'items': 4,
-			// 		'max-len': 100,
-			// 		'semi': true,
-			// 	},
-			// ],
 		},
 		plugins: {
 			jsdoc,
-			// 'import-newlines': importNewLine,
 			'unicorn': eslintPluginUnicorn,
 			'@stylistic': stylistic,
-
-			// import: importPlugin,
 		},
 		settings: {
 			jsdoc: {
@@ -81,6 +72,7 @@ export default [
 		},
 		rules: {
 			...eslint.configs.recommended.rules,
+			...stylistic.configs.recommended.rules,
 			...rules.eslint,
 			...rules.eslintStylistic,
 		},
@@ -98,7 +90,7 @@ export default [
 	},
 	{
 		files: ['**/*.?([cm])ts', '**/*.?([cm])tsx'],
-		plugins: { '@typescript-eslint': tsPlugin },
+		plugins: { '@typescript-eslint': tsEslint.plugin },
 		languageOptions: {
 			parser: tsParser,
 			parserOptions: {
@@ -106,9 +98,12 @@ export default [
 			},
 		},
 		rules: {
-			// todo: enable recommended rules after fixing all issues
-			// ...tsEslint.configs.recommended.rules,
+			...tsEslint.configs.recommended[0].rules,
+
+			// ...tsEslint.configs.stylistic[0].rules,
 			...rules.typescript,
+			'no-undef': 'off',
+			'no-unused-vars': 'off',
 		},
 	},
 	{
@@ -124,19 +119,22 @@ export default [
 				sourceType: 'module',
 			},
 		},
-		plugins: { '@typescript-eslint': tsPlugin },
+		plugins: { '@typescript-eslint': tsEslint.plugin },
 		rules: {
 			...rules.vue,
 			...rules.typescript,
 			...eslint.configs.recommended.rules,
+			...stylistic.configs.recommended.rules,
 			...rules.eslint,
 			...rules.eslintStylistic,
 			'unicorn/filename-case': [
-				'error',
+				'warn',
 				{
 					case: 'pascalCase',
 				},
 			],
+			'no-undef': 'off',
+			'no-unused-vars': 'off',
 		},
 	},
 	{
@@ -146,7 +144,7 @@ export default [
 			parser: jsonParser,
 		},
 		plugins: {
-			jsonc: jsoncPlugin,
+			jsonc: jsoncPlugin as CompatiblePlugin,
 		},
 	},
 	{
@@ -289,3 +287,5 @@ export default [
 		},
 	},
 ];
+
+export default config;

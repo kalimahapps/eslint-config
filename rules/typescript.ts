@@ -5,6 +5,7 @@ const rules: Linter.RulesRecord = {
 	'@typescript-eslint/consistent-type-imports': 'error',
 
 	// Warn
+	'@typescript-eslint/no-unused-vars': 'warn',
 	'@typescript-eslint/ban-ts-comment': [
 		'warn', {
 			'ts-ignore': 'allow-with-description',

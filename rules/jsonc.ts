@@ -39,7 +39,6 @@ const rules: Linter.RulesRecord = {
 			mode: 'strict',
 		},
 	],
-	'comma-style': ['warn', 'last'],
 };
 
 export default rules;

@@ -51,7 +51,6 @@ const rules: RuleOptions = {
 	'vue/no-duplicate-attr-inheritance': 'error',
 	'vue/no-multiple-objects-in-class': 'error',
 	'vue/no-ref-object-reactivity-loss': 'error',
-	'vue/no-undef-properties': 'error',
 	'vue/no-v-text': 'error',
 	'vue/padding-line-between-blocks': ['error', 'always'],
 	'vue/prefer-prop-type-boolean-first': 'error',

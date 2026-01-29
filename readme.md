@@ -64,6 +64,24 @@ import eslintConfig from '@kalimahapps/eslint-config';
 export default [...eslintConfig];
 ```
 
+To add custom rules or overrides, you can do this
+
+```js
+import eslintConfig from '@kalimahapps/eslint-config';
+export default [
+	...eslintConfig,
+	{
+		rules: {
+			'no-undef': 'off',
+			'no-unused-vars': 'off',
+		},
+	},
+	{
+		ignores: ['file-or-folder-to-ignore/**'],
+	},
+];
+```
+
 ### VSCode integration
 
 Install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension in VSCode and add this to your `.vscode/settings.json` file
@@ -94,18 +112,6 @@ Install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vs
 <br>
 <br>
 
-## Other projects
-### [Vue Icons](https://www.npmjs.com/package/@kalimahapps/vue-icons)
-70,000+ SVG icons from popular icon sets that you can add seamlessly to your vue projects
-
-### [Vue Popper](https://www.npmjs.com/package/@kalimahapps/vue-popper)
-A tooltip component for Vue 3 based on popper.js
-
-### [Vite inherit attrs](https://www.npmjs.com/package/vite-plugin-vue-setup-inherit-attrs)
-A vite plugin that adds support for inheritAttrs in vue-setup
-
-<br>
-<br>
-
-## License
-[MIT License](LICENSE)
+## Check out more from KalimahApps
+- [Repositories](https://github.com/orgs/kalimahapps/repositories)
+- [Projects](https://kalimah-apps.com/projects)

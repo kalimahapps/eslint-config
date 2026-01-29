@@ -8,8 +8,6 @@ import unicornRules from './unicorn';
 import vueRules from './vue';
 import ymlRules from './yml';
 
-// import importRules from './import.js';
-
 export default {
 	eslint: eslintRules,
 	eslintStylistic: eslintStylisticRules,
@@ -20,8 +18,4 @@ export default {
 	vue: vueRules,
 	jsonc,
 	yml: ymlRules,
-
-	// Rules are disabled for now until import plugin is
-	// updated to work with eslint 9
-	// ...outputRules('import', importRules),
 };

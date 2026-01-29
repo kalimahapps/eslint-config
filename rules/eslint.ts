@@ -14,42 +14,10 @@ const rules: Linter.RulesRecord = {
 			checkForEach: false,
 		},
 	],
-	'brace-style': [
-		'error',
-		'1tbs',
-		{ allowSingleLine: true },
-	],
-	'comma-spacing': [
-		'error', {
-			before: false,
-			after: true,
-		},
-	],
-	'indent': ['error', 'tab', { SwitchCase: 1 }],
-	'function-paren-newline': ['error', 'consistent'],
-	'quote-props': ['error', 'consistent-as-needed'],
-	'quotes': [
-		'error',
-		'single',
-		{
-			avoidEscape: true,
-			allowTemplateLiterals: false,
-		},
-	],
-	'comma-dangle': [
-		'error', {
-			arrays: 'always-multiline',
-			objects: 'always-multiline',
-			imports: 'never',
-			exports: 'never',
-			functions: 'never',
-		},
-	],
 	'no-self-compare': 'error',
 	'no-template-curly-in-string': 'error',
 	'no-unreachable-loop': 'error',
 	'consistent-return': ['error', { treatUndefinedAsUnspecified: true }],
-
 	'default-case': 'error',
 	'default-case-last': 'error',
 	'no-alert': 'error',
@@ -122,7 +90,6 @@ const rules: Linter.RulesRecord = {
 	'no-empty-function': 'warn',
 	'no-floating-decimal': 'warn',
 	'no-implicit-coercion': 'warn',
-	'no-inline-comments': 'warn',
 	'no-lone-blocks': 'warn',
 	'no-lonely-if': 'warn',
 	'no-loop-func': 'warn',
@@ -149,92 +116,6 @@ const rules: Linter.RulesRecord = {
 	'require-await': 'warn',
 	'require-unicode-regexp': 'warn',
 	'yoda': ['warn', 'never'],
-	'array-bracket-newline': ['warn', { multiline: true }],
-	'array-bracket-spacing': ['warn', 'never'],
-	'array-element-newline': ['warn', 'consistent'],
-	'arrow-parens': ['warn', 'always'],
-	'arrow-spacing': [
-		'warn', {
-			before: true,
-			after: true,
-		},
-	],
-	'block-spacing': ['warn', 'always'],
-	'dot-location': ['warn', 'property'],
-	'function-call-argument-newline': ['warn', 'consistent'],
-	'key-spacing': [
-		'warn', {
-			beforeColon: false,
-			afterColon: true,
-		},
-	],
-	'keyword-spacing': [
-		'warn', {
-			before: true,
-			after: true,
-		},
-	],
-	'line-comment-position': ['warn', 'above'],
-	'linebreak-style': ['warn', 'unix'],
-	'lines-around-comment': [
-		'warn', {
-			beforeBlockComment: true,
-			afterBlockComment: false,
-			beforeLineComment: true,
-			afterLineComment: false,
-			allowBlockStart: true,
-			allowBlockEnd: false,
-			allowObjectStart: true,
-			allowObjectEnd: false,
-			allowArrayStart: true,
-			allowArrayEnd: false,
-		},
-	],
-	'max-len': [
-		'warn', {
-			code: 100,
-			tabWidth: 4,
-			comments: 100,
-			ignoreUrls: true,
-			ignoreStrings: true,
-			ignoreTemplateLiterals: true,
-		},
-	],
-	'max-statements-per-line': ['warn', { max: 1 }],
-	'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 2 }],
-	'no-multi-spaces': 'warn',
-	'no-multiple-empty-lines': [
-		'warn', {
-			max: 1,
-			maxEOF: 0,
-		},
-	],
-	'no-trailing-spaces': [
-		'warn', {
-			skipBlankLines: true,
-			ignoreComments: true,
-		},
-	],
-	'object-curly-newline': [
-		'warn', {
-			multiline: true,
-			consistent: true,
-		},
-	],
-	'object-curly-spacing': ['warn', 'always'],
-	'object-property-newline': ['warn', { allowAllPropertiesOnSameLine: false }],
-	'padded-blocks': ['warn', 'never'],
-	'space-in-parens': ['warn', 'never'],
-	'space-infix-ops': ['warn'],
-	'space-unary-ops': ['warn'],
-	'switch-colon-spacing': [
-		'warn', {
-			after: true,
-			before: false,
-		},
-	],
-	'template-curly-spacing': ['warn', 'never'],
-	'template-tag-spacing': ['warn', 'always'],
 	'curly': ['warn', 'all'],
 };
 

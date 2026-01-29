@@ -1,7 +1,7 @@
 import KalimahEslintConfig from './index';
 export default [
 	{
-		ignores: ['test/**/*.vue'],
+		ignores: ['test/fixtures/**/*'],
 	},
 	...KalimahEslintConfig,
 ];
