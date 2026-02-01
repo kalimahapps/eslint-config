@@ -53,7 +53,7 @@ const config: Linter.Config[] = [
 		},
 	},
 	{
-		files: ['**/*.?([cm])[jt]s?(x)'],
+		files: ['**/*.?([cm])js?(x)'],
 		languageOptions: {
 			ecmaVersion: 2022,
 			globals: {
@@ -99,8 +99,11 @@ const config: Linter.Config[] = [
 		},
 		rules: {
 			...tsEslint.configs.recommended[0].rules,
-
-			// ...tsEslint.configs.stylistic[0].rules,
+			...tsEslint.configs.stylistic[0].rules,
+			...eslint.configs.recommended.rules,
+			...stylistic.configs.recommended.rules,
+			...rules.eslint,
+			...rules.eslintStylistic,
 			...rules.typescript,
 			'no-undef': 'off',
 			'no-unused-vars': 'off',
