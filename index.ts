@@ -6,15 +6,14 @@ import pluginVue from 'eslint-plugin-vue';
 import VueParser from 'vue-eslint-parser';
 import jsdoc from 'eslint-plugin-jsdoc';
 import jsoncPlugin from 'eslint-plugin-jsonc';
-import jsonParser from 'jsonc-eslint-parser';
+import * as jsoncParser from 'jsonc-eslint-parser';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import nPlugin from 'eslint-plugin-n';
 import eslintPluginYml from 'eslint-plugin-yml';
-import yamlParser from 'yaml-eslint-parser';
+import * as yamlParser from 'yaml-eslint-parser';
 import stylistic from '@stylistic/eslint-plugin';
-import type { Linter } from 'eslint/universal';
-import type { CompatiblePlugin } from 'node_modules/typescript-eslint/dist/compatibility-types.js';
 import { globalIgnores } from 'eslint/config';
+import type { Linter } from 'eslint/universal';
 
 const config: Linter.Config[] = [
 	globalIgnores([
@@ -144,10 +143,10 @@ const config: Linter.Config[] = [
 		files: ['**/*.json', '**/*.jsonc', '**/*.json5'],
 		rules: rules.jsonc,
 		languageOptions: {
-			parser: jsonParser,
+			parser: jsoncParser,
 		},
 		plugins: {
-			jsonc: jsoncPlugin as CompatiblePlugin,
+			jsonc: jsoncPlugin,
 		},
 	},
 	{

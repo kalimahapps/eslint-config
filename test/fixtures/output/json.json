@@ -1,0 +1,33 @@
+{
+	"name": "test",
+	"version": "1.0.0",
+	"description": "A test package",
+	"author": "test",
+	"license": "MIT",
+	"keywords": ["test", "demo"],
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"test": "vitest",
+		"lint": "eslint"
+	},
+	"dependencies": {
+		"vue": "^3.0.0",
+		"react": "^18.0.0"
+	},
+	"devDependencies": {
+		"typescript": "^5.0.0",
+		"vitest": "^4.0.0"
+	},
+	"engines": {
+		"node": ">=20.19"
+	},
+	"type": "module",
+	"private": true,
+	"sideEffects": false,
+	"exports": {
+		"import": "./dist/index.mjs",
+		"require": "./dist/index.cjs",
+		"types": "./dist/index.d.mts"
+	}
+}

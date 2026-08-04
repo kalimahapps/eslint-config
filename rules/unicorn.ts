@@ -2,7 +2,7 @@ import type { Linter } from 'eslint';
 
 const rules: Linter.RulesRecord = {
 	// Error
-	'unicorn/prevent-abbreviations': [
+	'unicorn/name-replacements': [
 		'error', {
 			replacements: {
 				props: false,

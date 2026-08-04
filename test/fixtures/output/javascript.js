@@ -26,8 +26,8 @@ class C { set value(v) { this._v = v; } }
 const mix = (a) => { return a + 1; };
 const badArrow = (a) => { return a; };
 const nested = a ? (b ? c : d) : e;
-const yoda = x === 1;
-const eq = x == y;
+const isYoda = x === 1;
+const isEq = x == y;
 
 const longLine = 'this is a very very very very very very very very very very very very long string';
 
@@ -138,7 +138,7 @@ function noSpread() { return Math.max.apply(null, array2); }
 
 function preferReject() { return Promise.reject('err'); }
 
-function template() { return 'a' + 'b'; }
+function template() { return 'ab'; }
 
 function noUnicode() { return /a/.test('a'); }
 

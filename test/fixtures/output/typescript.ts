@@ -95,7 +95,7 @@ module MyModule {} // prefer-namespace-keyword
 
 Promise.reject('fail'); // prefer-promise-reject-errors
 
-let expr; expr; // no-unused-expressions
+let expression; expression; // no-unused-expressions
 
 const wrapper = new String('bad'); // no-wrapper-object-types
 

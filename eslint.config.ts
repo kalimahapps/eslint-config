@@ -1,7 +1,7 @@
 import KalimahEslintConfig from './index';
 export default [
 	{
-		ignores: ['test/fixtures/**/*'],
+		// ignores: ['test/fixtures/**/*'],
 	},
 	...KalimahEslintConfig,
 ];
